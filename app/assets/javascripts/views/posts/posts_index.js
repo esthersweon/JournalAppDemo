@@ -29,7 +29,7 @@ JournalApp.Views.PostsIndex = Backbone.View.extend({
   },
 
   renderSingleModel: function (model) {
-    var view = new JournalApp.Views.PostItem({ model: model });
+    var view = new JournalApp.Views.PostShow({ model: model });
     this.$el.append(view.render().$el);
   }
 });
