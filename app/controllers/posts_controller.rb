@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   respond_to :json
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     @post.save!
 
     render :json => @post
@@ -27,7 +27,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes!(params[:post])
+    @post.update_attributes!(post_params)
     render :json => @post
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end
