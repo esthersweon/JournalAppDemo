@@ -43,7 +43,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-  gem 'backbone-on-rails'
+gem 'backbone-on-rails'
 group :development, :test do
   gem 'rspec-rails'
 end
