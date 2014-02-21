@@ -7,11 +7,8 @@ JournalApp.Views.PostsIndex = Backbone.View.extend({
 
   initialize: function () {
     var that = this;
-
-    var events = ["add", "change:title", "remove", "reset"];
-    _(events).each(function (event) {
-      that.listenTo(that.collection, event, that.render);
-    });
+    this.listenTo(this.collection, "change:title remove reset", this.render);
+    this.listenTo(this.collection, "add", this.renderSingleModel);
   },
 
   destroyPost: function (event) {
@@ -29,5 +26,10 @@ JournalApp.Views.PostsIndex = Backbone.View.extend({
     this.$el.html(renderedContent);
 
     return this;
+  },
+
+  renderSingleModel: function (model) {
+    var view = new JournalApp.Views.PostItem({ model: model });
+    this.$el.append(view.render().$el);
   }
 });
