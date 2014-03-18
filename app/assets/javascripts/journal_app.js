@@ -10,9 +10,9 @@ window.JournalApp = {
     // var indexView = new JournalApp.Views.PostsIndex({
     //   collection: JournalApp.posts
     // });
-    // 
+    //
     // $("#content").html(indexView.render().$el);
-    // 
+    //
     // // fetch 'em down!
     // JournalApp.posts.fetch();
 

@@ -6,7 +6,7 @@ JournalApp.Views.PostShow = Backbone.View.extend({
       post: this.model
     });
     this.$el.html(renderedContent);
-    
+
     return this;
   }
 });
