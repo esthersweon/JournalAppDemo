@@ -52,7 +52,7 @@ JournalApp.Routers.Posts = Backbone.Router.extend({
     var that = this;
 
     that._getPost(id, function (post) {
-      var formView = new JournalApp.Views.PostForm({
+      var showView = new JournalApp.Views.PostsShow({
         model: post
       });
 
