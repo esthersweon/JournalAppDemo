@@ -78,7 +78,7 @@ JournalApp.Routers.Posts = Backbone.Router.extend({
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
-    this._currenView = view;
+    this._currentView = view;
     this.$rootEl.html(view.render().$el);
   }
 });
